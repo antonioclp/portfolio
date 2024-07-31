@@ -10,10 +10,10 @@ import { useEffect } from 'react'
 export default async function Home(): Promise<JSX.Element> {
   const data = await fetchApi({
     option: 'get-repo',
-    repos: ['y-social-media', 'project-app-delivery'],
+    repos: ["y-social-media", "project-app-delivery"]
   })
 
-  console.log(data)
+  console.log(data);
   return (
     <main>
       <span>Home</span>
