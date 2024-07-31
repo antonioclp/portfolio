@@ -11,12 +11,12 @@ import LeftBar from '@/components/LeftBar'
  * @returns {Promise<JSX.Element>}
  */
 export default function Home(): JSX.Element {
-  const [information, setInformation] = useState<InformationOption>('about-me')
+  const [options, setOptions] = useState<InformationOption>('about-me')
 
   const handleClick = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
     const {id} = event.target as HTMLElement
 
-    setInformation(id as InformationOption);
+    setOptions(id as InformationOption);
   }
 
   return (
@@ -25,7 +25,7 @@ export default function Home(): JSX.Element {
       <section>
         <LeftBar handleClick={handleClick} />
         {
-          information
+          options
         }
       </section>
     </main>
