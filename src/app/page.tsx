@@ -2,7 +2,7 @@
 import React, {useState} from 'react'
 
 // Components.
-import {LeftBar, About} from '@/components'
+import {LeftBar, About, Projects} from '@/components'
 
 /**
  * Development branch @version 0.1.0
@@ -24,7 +24,7 @@ export default function Home(): JSX.Element {
       <section>
         <LeftBar handleClick={handleClick} />
         {options === 'about-me' && <About />}
-        {options === 'projects' && <span>Projects</span>}
+        {options === 'projects' && <Projects />}
         {options === 'contacts' && <span>Contacts</span>}
       </section>
     </main>

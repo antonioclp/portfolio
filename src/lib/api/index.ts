@@ -1,3 +1,6 @@
+// Interfaces.
+import { IDefaultResponse, IFetchOptions, IRepository } from "../interfaces"
+
 const user = process.env.GITHUB_USER
 const token = process.env.GITHUB_TOKEN
 

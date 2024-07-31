@@ -1,9 +1,9 @@
-interface IFetchOptions {
+export interface IFetchOptions {
   option: FetchOptions
   repos: string[]
 }
 
-interface IRepository {
+export interface IRepository {
   id: number,
   name: string,
   html_url: string,
@@ -11,7 +11,7 @@ interface IRepository {
   languages_url: string
 }
 
-interface IDefaultResponse {
+export interface IDefaultResponse {
   message: string,
   status: number,
   data: IRepository[]
