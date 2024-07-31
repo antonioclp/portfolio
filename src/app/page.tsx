@@ -16,12 +16,7 @@ export default function Home(): JSX.Element {
   const handleClick = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
     const {id} = event.target as HTMLElement
 
-    switch (id) {
-      case 'about-me':
-        break
-      default:
-        break
-    }
+    setInformation(id as InformationOption);
   }
 
   return (
@@ -29,6 +24,9 @@ export default function Home(): JSX.Element {
       <span>Home</span>
       <section>
         <LeftBar handleClick={handleClick} />
+        {
+          information
+        }
       </section>
     </main>
   )
