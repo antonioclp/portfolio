@@ -1,5 +1,8 @@
-import {fetchApi} from '@/lib/api'
-import { useEffect } from 'react'
+'use client'
+import React, {useState} from 'react'
+
+// Components.
+import LeftBar from '@/components/LeftBar'
 
 /**
  * Development branch @version 0.1.0
@@ -7,16 +10,26 @@ import { useEffect } from 'react'
  * Component that renders a window with general features.
  * @returns {Promise<JSX.Element>}
  */
-export default async function Home(): Promise<JSX.Element> {
-  const data = await fetchApi({
-    option: 'get-repo',
-    repos: ["y-social-media", "project-app-delivery"]
-  })
+export default function Home(): JSX.Element {
+  const [information, setInformation] = useState<InformationOption>('about-me')
 
-  console.log(data);
+  const handleClick = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
+    const {id} = event.target as HTMLElement
+
+    switch (id) {
+      case 'about-me':
+        break
+      default:
+        break
+    }
+  }
+
   return (
     <main>
       <span>Home</span>
+      <section>
+        <LeftBar handleClick={handleClick} />
+      </section>
     </main>
   )
 }
