@@ -2,7 +2,7 @@
 import React, {useState} from 'react'
 
 // Components.
-import LeftBar from '@/components/LeftBar'
+import {LeftBar, About} from '@/components'
 
 /**
  * Development branch @version 0.1.0
@@ -16,7 +16,7 @@ export default function Home(): JSX.Element {
   const handleClick = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
     const {id} = event.target as HTMLElement
 
-    setOptions(id as InformationOption);
+    setOptions(id as InformationOption)
   }
 
   return (
@@ -24,9 +24,9 @@ export default function Home(): JSX.Element {
       <span>Home</span>
       <section>
         <LeftBar handleClick={handleClick} />
-        {
-          options
-        }
+        {options === 'about-me' && <About />}
+        {options === 'projects' && <span>Projects</span>}
+        {options === 'contacts' && <span>Contacts</span>}
       </section>
     </main>
   )
