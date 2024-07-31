@@ -21,7 +21,6 @@ export default function Home(): JSX.Element {
 
   return (
     <main>
-      <span>Home</span>
       <section>
         <LeftBar handleClick={handleClick} />
         {options === 'about-me' && <About />}
