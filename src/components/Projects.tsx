@@ -28,8 +28,8 @@ export default function Projects({
           <Image
             src="/photos/photo.jpg"
             alt={selected.name}
-            width={50}
-            height={50}
+            width={300}
+            height={300}
           />
           <span>{selected.language}</span>
         </section>
