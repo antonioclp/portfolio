@@ -15,7 +15,7 @@ import {InformationOptions, ProjectOptions} from '@/lib/types'
 
 interface IOptionState {
   showComponent: InformationOptions
-  showProjectComponent: ProjectOptions
+  showProject: ProjectOptions
 }
 
 /**
@@ -27,7 +27,7 @@ interface IOptionState {
 export default function Home(): JSX.Element {
   const [options, setOptions] = useState<IOptionState>({
     showComponent: 'about-me',
-    showProjectComponent: 'y-social-media',
+    showProject: 'y-social-media',
   })
 
   const [repositories, setRepositories] = useState<IRepository[]>([])
@@ -49,7 +49,6 @@ export default function Home(): JSX.Element {
     event: React.MouseEvent<HTMLElement, MouseEvent>,
   ) => {
     const {id} = event.target as HTMLElement
-    console.log(id)
     setOptions((prev) => ({...prev, showComponent: id as InformationOptions}))
   }
 
@@ -57,10 +56,9 @@ export default function Home(): JSX.Element {
     event: React.MouseEvent<HTMLElement, MouseEvent>,
   ) => {
     const {id} = event.target as HTMLElement
-    console.log(id)
     setOptions((prev) => ({
       ...prev,
-      showProjectComponent: id as ProjectOptions,
+      showProject: id as ProjectOptions,
     }))
   }
 
@@ -70,7 +68,11 @@ export default function Home(): JSX.Element {
         <LeftBar handleClick={handleComponentClick} />
         {options.showComponent === 'about-me' && <About />}
         {options.showComponent === 'projects' && (
-          <Projects repos={repositories} handleClick={handleProjectClick} />
+          <Projects
+            repos={repositories}
+            handleClick={handleProjectClick}
+            showProject={options.showProject}
+          />
         )}
         {options.showComponent === 'contacts' && <span>Contacts</span>}
       </section>
