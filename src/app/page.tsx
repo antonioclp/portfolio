@@ -10,6 +10,14 @@ import {fetchApi} from '@/lib/api'
 // Interfaces.
 import {IRepository} from '@/lib/interfaces'
 
+// Types
+import {InformationOptions, ProjectOptions} from '@/lib/types'
+
+interface IOptionState {
+  showComponent: InformationOptions
+  showProjectComponent: ProjectOptions
+}
+
 /**
  * Development branch @version 0.1.0
  * Front-end development branch @version 0.1
@@ -17,7 +25,11 @@ import {IRepository} from '@/lib/interfaces'
  * @returns {Promise<JSX.Element>}
  */
 export default function Home(): JSX.Element {
-  const [options, setOptions] = useState<InformationOption>('about-me')
+  const [options, setOptions] = useState<IOptionState>({
+    showComponent: 'about-me',
+    showProjectComponent: 'y-social-media',
+  })
+
   const [repositories, setRepositories] = useState<IRepository[]>([])
 
   useEffect(() => {
@@ -33,19 +45,34 @@ export default function Home(): JSX.Element {
     fetchRepositories()
   }, [])
 
-  const handleClick = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
+  const handleComponentClick = (
+    event: React.MouseEvent<HTMLElement, MouseEvent>,
+  ) => {
     const {id} = event.target as HTMLElement
+    console.log(id)
+    setOptions((prev) => ({...prev, showComponent: id as InformationOptions}))
+  }
 
-    setOptions(id as InformationOption)
+  const handleProjectClick = (
+    event: React.MouseEvent<HTMLElement, MouseEvent>,
+  ) => {
+    const {id} = event.target as HTMLElement
+    console.log(id)
+    setOptions((prev) => ({
+      ...prev,
+      showProjectComponent: id as ProjectOptions,
+    }))
   }
 
   return (
     <main>
       <section>
-        <LeftBar handleClick={handleClick} />
-        {options === 'about-me' && <About />}
-        {options === 'projects' && <Projects repos={repositories} />}
-        {options === 'contacts' && <span>Contacts</span>}
+        <LeftBar handleClick={handleComponentClick} />
+        {options.showComponent === 'about-me' && <About />}
+        {options.showComponent === 'projects' && (
+          <Projects repos={repositories} handleClick={handleProjectClick} />
+        )}
+        {options.showComponent === 'contacts' && <span>Contacts</span>}
       </section>
     </main>
   )

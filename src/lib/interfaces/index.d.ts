@@ -1,3 +1,6 @@
+// Types
+import { FetchOptions } from "../types"
+
 export interface IFetchOptions {
   option: FetchOptions
   repos: string[]
