@@ -2,12 +2,12 @@
   <img src="https://www.svgrepo.com/show/368858/nextjs.svg" width="200">
 </p>
 
-<h3 align="center">Next Template</h3>
+<h3 align="center">Portfolio</h3>
 
 <div align="center">
 
-[![Status](https://img.shields.io/badge/status-active-success.svg)](https://github.com/antonioclp/nextjs-template) 
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/antonioclp/nextjs-template)](https://github.com/antonioclp/nextjs-template)
+[![Status](https://img.shields.io/badge/status-active-success.svg)](https://github.com/antonioclp/new-portfolio) 
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/antonioclp/new-portfolio)](https://github.com/antonioclp/new-portfolio)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
 </div>
@@ -25,9 +25,9 @@
 ### Usage
 
 ```bash
-git clone git@github.com:antonioclp/nextjs-template.git
+git clone git@github.com:antonioclp/new-portfolio.git
 
-cd nextjs-template
+cd new-portfolio
 
 npm install && npm run dev
 ```
