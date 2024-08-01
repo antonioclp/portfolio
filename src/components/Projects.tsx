@@ -6,6 +6,10 @@ import {IRepository} from '@/lib/interfaces'
 // Types.
 import {ProjectOptions} from '@/lib/types'
 
+// Styles.
+import '@/styles/components/projects.css'
+import Link from 'next/link'
+
 interface IComponentProps {
   repos: IRepository[]
   handleClick: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void
@@ -19,28 +23,48 @@ export default function Projects({
 }: IComponentProps): JSX.Element {
   const selected = repos.find((r) => r.name === showProject)
 
+  const formatProjectName = (name: string): string => {
+    if (name === 'y-social-media') return 'Y Social Media'
+
+    if (name === 'project-app-delivery') return 'App Delivery'
+
+    if (name === 'old-school') return 'Old School'
+
+    return ''
+  }
+
   return (
-    <section>
+    <section className="projects-comp">
       {selected && (
         <section>
-          <h3>{selected.name}</h3>
-          <span>{selected.description}</span>
-          <Image
-            src="/photos/photo.jpg"
-            alt={selected.name}
-            width={300}
-            height={300}
-          />
-          <span>{selected.language}</span>
+          <div>
+            <Link href={selected.html_url} target="_blank">
+              <h3>{formatProjectName(selected.name)}</h3>
+            </Link>
+            <span>{selected.description}</span>
+          </div>
+          <div>
+            <Link href={selected.html_url} target="_blank">
+              <Image
+                src={`/photos/${selected.name}.jpg`}
+                alt={selected.name}
+                width={350}
+                height={200}
+                priority
+              />
+            </Link>
+          </div>
         </section>
       )}
-      {repos.map((r) => {
-        return (
-          <span key={r.id} id={r.name} onClick={(e) => handleClick(e)}>
-            {r.name}
-          </span>
-        )
-      })}
+      <section>
+        {repos.map((r) => {
+          return (
+            <span key={r.id} id={r.name} onClick={(e) => handleClick(e)}>
+              {formatProjectName(r.name)}
+            </span>
+          )
+        })}
+      </section>
     </section>
   )
 }
