@@ -6,8 +6,8 @@
 
 <div align="center">
 
-[![Status](https://img.shields.io/badge/status-active-success.svg)](https://github.com/antonioclp/new-portfolio) 
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/antonioclp/new-portfolio)](https://github.com/antonioclp/new-portfolio)
+[![Status](https://img.shields.io/badge/status-active-success.svg)](https://github.com/antonioclp/portfolio) 
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/antonioclp/portfolio)](https://github.com/antonioclp/portfolio)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
 </div>
