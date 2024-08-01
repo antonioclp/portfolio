@@ -95,6 +95,14 @@ video {
   font: inherit;
   vertical-align: baseline;
   color: white;
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h4 {
+    font-size: 14px;
+  }
   
   h5 {
    font-size: 12px;

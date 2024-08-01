@@ -25,7 +25,7 @@ export default function LeftBar({
         />
       </section>
       <section>
-        <h2>ANTONIO SANTANA</h2>
+        <h4>ANTONIO SANTANA</h4>
         <h5>SOFTWARE ENGINEER</h5>
       </section>
       <section>

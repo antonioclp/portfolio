@@ -1,10 +1,13 @@
+// Styles.
+import '@/styles/components/about.css'
+
 /**
  * About component that renders a information and description.
  * @returns {JXS.Element}
  */
 export default function About(): JSX.Element {
   return (
-    <article>
+    <article className="about-comp">
       <section>
         <p>
           Desde os 16 anos apaixonado por tecnologia. Ao longo dos anos me
@@ -16,37 +19,49 @@ export default function About(): JSX.Element {
         </p>
       </section>
       <section>
-        <h2>Linha do tempo</h2>
-      </section>
-      <section>
-        <span></span>
         <div>
-          <h4>Faculdade UniFacid Wyden 2024</h4>
-          <h5>Análise e Desenvolvimento de Sistemas</h5>
-          <p></p>
-        </div>
-        <span></span>
-        <div>
-          <h4>iTalents - 2024</h4>
-          <h5>Desenvolvimento Back-end Node.js + MongoDB</h5>
-          <p></p>
-        </div>
-        <span></span>
-        <div>
-          <h4>Trybe - 2024</h4>
-          <h5>Aceleração em Desenvolvimento Java</h5>
-          <p></p>
-        </div>
-        <span></span>
-        <div>
-          <h4>DIO Bootcamp Santander - 2023</h4>
-          <h5>Desenvolvimento Java + Angular</h5>
-          <p></p>
+          <div>
+            <h4>Trybe</h4>
+            <h4>2023</h4>
+            <h5>Desenvolvimento Web Fullstack</h5>
+            <div className="timeline">
+              <span className="circle"></span>
+              <span className="line"></span>
+            </div>
+          </div>
         </div>
         <div>
-          <h4>Trybe - 2023</h4>
-          <h5>Desenvolvimento Web Fullstack</h5>
-          <p></p>
+          <div>
+            <h4>DIO - Bootcamp Santander</h4>
+            <h4>2023</h4>
+            <h5>Java + Angular</h5>
+            <div className="timeline">
+              <span className="circle"></span>
+              <span className="line"></span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div>
+            <h4>Trybe</h4>
+            <h4>2024</h4>
+            <h5>Aceleração Java</h5>
+            <div className="timeline">
+              <span className="circle"></span>
+              <span className="line"></span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div>
+            <h4>Faculdade UniFacid Wyden</h4>
+            <h4>2024</h4>
+            <h5>Análise e Desenvolvimento de Sistemas</h5>
+            <div className="timeline">
+              <span className="circle"></span>
+              <span className="line"></span>
+            </div>
+          </div>
         </div>
       </section>
     </article>
