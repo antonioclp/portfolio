@@ -36,7 +36,7 @@ export default function Home(): JSX.Element {
     const fetchRepositories = async () => {
       const repositories = await fetchApi({
         option: 'get-repo',
-        repos: ['y-social-media', 'project-app-delivery', 'old-school'],
+        repos: ['y-social-media', 'star-wars-planets', 'old-school'],
       })
 
       setRepositories(repositories.data)

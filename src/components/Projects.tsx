@@ -26,7 +26,7 @@ export default function Projects({
   const formatProjectName = (name: string): string => {
     if (name === 'y-social-media') return 'Y Social Media'
 
-    if (name === 'project-app-delivery') return 'App Delivery'
+    if (name === 'star-wars-planets') return 'Star Wars Planets'
 
     if (name === 'old-school') return 'Old School'
 
@@ -48,7 +48,7 @@ export default function Projects({
               <Image
                 src={`/photos/${selected.name}.jpg`}
                 alt={selected.name}
-                width={350}
+                width={400}
                 height={200}
                 priority
               />

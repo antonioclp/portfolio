@@ -70,8 +70,8 @@
       display: flex;
       justify-content: center;
       padding: 10px;
-      max-width: 100px;
-      min-width: 100px;
+      max-width: 110px;
+      min-width: 110px;
       border: 1px solid black;
       border-radius: 20px;
       font-size: 12px;
