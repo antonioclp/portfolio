@@ -4,11 +4,7 @@
  */
 export default function About(): JSX.Element {
   return (
-    <section>
-      <section>
-        <h2>ANTONIO SANTANA</h2>
-        <h3>SOFTWARE ENGINEER</h3>
-      </section>
+    <article>
       <section>
         <p>
           Desde os 16 anos apaixonado por tecnologia. Ao longo dos anos me
@@ -53,6 +49,6 @@ export default function About(): JSX.Element {
           <p></p>
         </div>
       </section>
-    </section>
+    </article>
   )
 }

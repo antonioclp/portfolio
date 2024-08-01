@@ -1,6 +1,9 @@
 'use client'
 import Image from 'next/image'
 
+// Style.
+import '@/styles/components/leftbar.css'
+
 /**
  * Aside component that renders some links and informations.
  * @returns {Promise<JSX.Element>}
@@ -11,7 +14,7 @@ export default function LeftBar({
   handleClick: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void
 }): JSX.Element {
   return (
-    <aside>
+    <aside className="aside-leftbar">
       <section>
         <Image
           src="/photos/photo.jpg"
@@ -20,6 +23,10 @@ export default function LeftBar({
           height={120}
           priority
         />
+      </section>
+      <section>
+        <h2>ANTONIO SANTANA</h2>
+        <h5>SOFTWARE ENGINEER</h5>
       </section>
       <section>
         <div>
