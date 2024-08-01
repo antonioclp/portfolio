@@ -24,6 +24,26 @@
     }
   }
 
+  section:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    img {
+      padding: 5px;
+      border-radius: 50%;
+      border: 1px solid #282119;
+      background-color: wheat;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+
+    img:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
+
   section:last-child {
     display: flex;
     flex-wrap: wrap;

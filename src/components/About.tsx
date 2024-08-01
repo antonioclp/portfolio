@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 // Styles.
 import '@/styles/components/about.css'
 
@@ -17,6 +19,36 @@ export default function About(): JSX.Element {
           e Java. Meu foco é o aprendizado contínuo que me fará contribuir em
           inúmeros projetos inovadores.
         </p>
+      </section>
+      <section>
+        <Image
+          src="/icons/nextjs-icon.png"
+          alt="react"
+          width={30}
+          height={30}
+          priority
+        />
+        <Image
+          src="/icons/nodejs-icon.png"
+          alt="react"
+          width={30}
+          height={30}
+          priority
+        />
+        <Image
+          src="/icons/reactjs-icon.png"
+          alt="react"
+          width={30}
+          height={30}
+          priority
+        />
+        <Image
+          src="/icons/spring-icon.png"
+          alt="react"
+          width={30}
+          height={30}
+          priority
+        />
       </section>
       <section>
         <div>
