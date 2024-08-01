@@ -63,19 +63,17 @@ export default function Home(): JSX.Element {
   }
 
   return (
-    <main>
-      <section>
-        <LeftBar handleClick={handleComponentClick} />
-        {options.showComponent === 'about-me' && <About />}
-        {options.showComponent === 'projects' && (
-          <Projects
-            repos={repositories}
-            handleClick={handleProjectClick}
-            showProject={options.showProject}
-          />
-        )}
-        {options.showComponent === 'contacts' && <span>Contacts</span>}
-      </section>
+    <main className="app-pg">
+      <LeftBar handleClick={handleComponentClick} />
+      {options.showComponent === 'about-me' && <About />}
+      {options.showComponent === 'projects' && (
+        <Projects
+          repos={repositories}
+          handleClick={handleProjectClick}
+          showProject={options.showProject}
+        />
+      )}
+      {options.showComponent === 'contacts' && <span>Contacts</span>}
     </main>
   )
 }
