@@ -3,6 +3,10 @@
    License: none (public domain)
 */
 
+body {
+  background-color: #050834;
+}
+
 html,
 body,
 div,
@@ -90,6 +94,36 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  color: white;
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  h4 {
+    font-size: 14px;
+  }
+  
+  h5 {
+   font-size: 12px;
+  }
+
+  span,
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    cursor: default;
+    opacity: 0.95;
+  }  
+  
 }
 /* HTML5 display-role reset for older browsers */
 article,

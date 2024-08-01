@@ -1,0 +1,37 @@
+.contacts-comp {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 5px;
+  min-width: 70%;
+  max-width: 70%;
+  min-height: 470px;
+  max-height: 470px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.8);
+  background-color: #c5baaa;
+  border: 1px solid black;
+  margin-top: 20px;
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    
+    a {
+      text-decoration: none;
+    }
+
+    h3 {
+      font-weight: bold;
+      color: #282119;
+      margin-left: 5px;
+    }
+
+    h3:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}
