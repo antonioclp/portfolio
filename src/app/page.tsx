@@ -2,7 +2,7 @@
 import React, {useEffect, useState} from 'react'
 
 // Components.
-import {LeftBar, About, Projects} from '@/components'
+import {LeftBar, About, Projects, Contacts} from '@/components'
 
 // Api.
 import {fetchApi} from '@/lib/api'
@@ -73,7 +73,7 @@ export default function Home(): JSX.Element {
           showProject={options.showProject}
         />
       )}
-      {options.showComponent === 'contacts' && <span>Contacts</span>}
+      {options.showComponent === 'contacts' && <Contacts />}
     </main>
   )
 }

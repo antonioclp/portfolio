@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 // Interfaces.
 import {IRepository} from '@/lib/interfaces'
@@ -8,7 +9,6 @@ import {ProjectOptions} from '@/lib/types'
 
 // Styles.
 import '@/styles/components/projects.css'
-import Link from 'next/link'
 
 interface IComponentProps {
   repos: IRepository[]

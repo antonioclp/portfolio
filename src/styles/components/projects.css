@@ -11,6 +11,7 @@
   box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.8);
   background-color: #c5baaa;
   border: 1px solid black;
+  margin-top: 20px;
 
   section {
     display: flex;
