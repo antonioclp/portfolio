@@ -28,7 +28,7 @@ export default function Projects({
 
     if (name === 'star-wars-planets') return 'Star Wars Planets'
 
-    if (name === 'old-school') return 'Old School'
+    if (name === 'language-school') return 'Language School'
 
     return ''
   }
