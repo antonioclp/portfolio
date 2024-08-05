@@ -16,7 +16,7 @@
 > Portfolio that show informations, description and some important projects.
 
 <p align="start">
-  <img src="./public/photos/portfolio-snapshot.bmp" width="400" style="border-radius: 5px">
+  <img src="./public/photos/portfolio.jpg" width="400" style="border-radius: 5px">
 </p>
 
 ### Usage
