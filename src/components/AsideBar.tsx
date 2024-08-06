@@ -2,13 +2,14 @@
 import Image from 'next/image'
 
 // Style.
-import '@/styles/components/leftbar.css'
+import '@/styles/components/asidebar.css'
+import '@/styles/responsive/components/asidebar.responsive.css'
 
 /**
  * Aside component that renders some links and informations.
  * @returns {Promise<JSX.Element>}
  */
-export default function LeftBar({
+export default function AsideBar({
   handleClick,
 }: {
   handleClick: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void

@@ -1,7 +1,10 @@
 import type {Metadata} from 'next'
 import {Poppins} from 'next/font/google'
-import '../styles/global.css'
-import '../styles/page/app.css'
+
+// Styles.
+import '@/styles/global.css'
+import '@/styles/page/app.css'
+import '@/styles/responsive/app.responsive.css'
 
 const poppins = Poppins({
   subsets: ['latin'],

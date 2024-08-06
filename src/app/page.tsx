@@ -2,7 +2,7 @@
 import React, {useEffect, useState} from 'react'
 
 // Components.
-import {LeftBar, About, Projects, Contacts} from '@/components'
+import {About, Projects, Contacts, AsideBar} from '@/components'
 
 // Api.
 import {fetchApi} from '@/lib/api'
@@ -64,7 +64,7 @@ export default function Home(): JSX.Element {
 
   return (
     <main className="app-pg">
-      <LeftBar handleClick={handleComponentClick} />
+      <AsideBar handleClick={handleComponentClick} />
       {options.showComponent === 'about-me' && <About />}
       {options.showComponent === 'projects' && (
         <Projects
