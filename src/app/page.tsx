@@ -21,6 +21,7 @@ interface IOptionState {
 /**
  * Development branch @version 0.1.2
  * Front-end development branch @version 1.0
+ * Responsive development branch @version 0.1.3-r
  * Component that renders a window with general features.
  * @returns {Promise<JSX.Element>}
  */
