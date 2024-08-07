@@ -9,7 +9,7 @@ export const fetchApi = async (
 ): Promise<IDefaultResponse> => {
   let status = 0
   const {option, repos} = options
-  const url = `https://api.github.com/users/${user}/repos`
+  const url = `https://api.github.com/users/${user}/repos?page=1&per_page=50`
 
   await new Promise((resolve) => setTimeout(resolve, 3000))
 
