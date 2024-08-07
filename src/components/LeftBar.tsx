@@ -10,19 +10,23 @@ import '@/styles/components/leftbar.css'
  */
 export default function LeftBar({
   handleClick,
+  isMobile,
 }: {
   handleClick: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void
+  isMobile: boolean
 }): JSX.Element {
   return (
     <aside className="aside-leftbar">
       <section>
-        <Image
-          src="/photos/photo.jpg"
-          alt="antonio santana"
-          width={120}
-          height={120}
-          priority
-        />
+        {!isMobile && (
+          <Image
+            src="/photos/photo.jpg"
+            alt="antonio santana"
+            width={120}
+            height={120}
+            priority
+          />
+        )}
       </section>
       <section>
         <h4>ANTONIO SANTANA</h4>

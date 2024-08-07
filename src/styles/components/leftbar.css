@@ -83,13 +83,6 @@
     padding: 0;
     margin: 0;
     width: 100%;
-    border: 2px solid white;
-
-    section:first-child {
-      img {
-        display: none;
-      }
-    }
 
     section:nth-child(2) {
       width: 100%;
