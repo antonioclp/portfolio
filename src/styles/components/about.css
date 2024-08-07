@@ -99,3 +99,24 @@
     }
   }
 }
+
+@media (max-width: 1080px) {
+  .about-comp {
+    max-width: none;
+    width: 90%;
+  
+    section:first-child {
+      img {
+        border-radius: 50%;
+        margin: 50px;
+      }
+    }
+
+    section:nth-child(2) {
+      width: 90%;
+      p {
+        text-align: center;
+      }
+    }
+  }
+}
