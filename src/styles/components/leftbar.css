@@ -72,7 +72,7 @@
   }
 }
 
-@media screen and (max-height: 2400px) and (max-width: 1080px) {
+@media (max-widht: 812px) {
   .aside-leftbar {
     display: flex;
     flex-direction: row;
