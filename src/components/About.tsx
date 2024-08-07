@@ -1,16 +1,27 @@
+import Link from 'next/link'
 import Image from 'next/image'
 
 // Styles.
 import '@/styles/components/about.css'
-import Link from 'next/link'
 
 /**
  * About component that renders a information and description.
  * @returns {JXS.Element}
  */
-export default function About(): JSX.Element {
+export default function About({isMobile}: {isMobile: boolean}): JSX.Element {
   return (
     <article className="about-comp">
+      <section>
+        {isMobile && (
+          <Image
+            src="/photos/photo.jpg"
+            alt="antonio santana"
+            width={120}
+            height={120}
+            priority
+          />
+        )}
+      </section>
       <section>
         <p>
           Desde os 16 anos apaixonado por tecnologia. Ao longo dos anos me

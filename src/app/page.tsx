@@ -30,7 +30,7 @@ export default function Home(): JSX.Element {
     showComponent: 'about-me',
     showProject: 'y-social-media',
   })
-
+  const [isMobile, setIsMobile] = useState<boolean>(false)
   const [repositories, setRepositories] = useState<IRepository[]>([])
 
   useEffect(() => {
@@ -43,6 +43,13 @@ export default function Home(): JSX.Element {
       setRepositories(repositories.data)
     }
 
+    const handleResize = () => {
+      const width = document.documentElement.clientWidth
+
+      setIsMobile(width <= 1080)
+    }
+
+    handleResize()
     fetchRepositories()
   }, [])
 
@@ -65,8 +72,8 @@ export default function Home(): JSX.Element {
 
   return (
     <main className="app-pg">
-      <LeftBar handleClick={handleComponentClick} />
-      {options.showComponent === 'about-me' && <About />}
+      <LeftBar handleClick={handleComponentClick} isMobile={isMobile} />
+      {options.showComponent === 'about-me' && <About isMobile={isMobile} />}
       {options.showComponent === 'projects' && (
         <Projects
           repos={repositories}
