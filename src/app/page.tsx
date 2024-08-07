@@ -46,7 +46,7 @@ export default function Home(): JSX.Element {
     const handleResize = () => {
       const width = document.documentElement.clientWidth
 
-      setIsMobile(width <= 414)
+      setIsMobile(width <= 1080)
     }
 
     handleResize()
