@@ -90,6 +90,7 @@
 
 @media (max-width: 1080px) {
   .projects-comp {
+    flex-direction: column;
     max-width: none;
     min-width: none;
     min-height: none;
@@ -98,14 +99,15 @@
 
     section:first-child {
       display: flex;
-      flex-direction: column;
+      flex-direction: column-reverse;
       justify-content: center;
-
+      
       img {
         width: 300px;
         height: 150px;
+        margin: 5px;
       }
-
+      
       div:first-child {
         min-height: 100%;
         min-width: none;
@@ -122,14 +124,16 @@
     section:last-child {
       display: flex;
       flex-direction: row-reverse;
-
+      width: 100%;
+      
       span {
-        margin-top: 10%;
-        margin-bottom: 10px;
         font-size: 10px;
         max-width: none;
         min-width: none;
-        padding: 5px;
+        padding: 10px;
+        max-width: none;
+        min-width: 100px;
+        max-width: 100px;
       }
     }
   }
