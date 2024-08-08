@@ -79,6 +79,7 @@ export default function Home(): JSX.Element {
           repos={repositories}
           handleClick={handleProjectClick}
           showProject={options.showProject}
+          isMobile={isMobile}
         />
       )}
       {options.showComponent === 'contacts' && <Contacts />}

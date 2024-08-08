@@ -14,12 +14,14 @@ interface IComponentProps {
   repos: IRepository[]
   handleClick: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void
   showProject: ProjectOptions
+  isMobile: boolean
 }
 
 export default function Projects({
   repos,
   handleClick,
   showProject,
+  isMobile,
 }: IComponentProps): JSX.Element {
   const selected = repos.find((r) => r.name === showProject)
 
@@ -35,6 +37,16 @@ export default function Projects({
 
   return (
     <section className="projects-comp">
+      <section>
+        {isMobile &&
+          repos.map((r) => {
+            return (
+              <span key={r.id} id={r.name} onClick={(e) => handleClick(e)}>
+                {formatProjectName(r.name)}
+              </span>
+            )
+          })}
+      </section>
       {selected && (
         <section>
           <div>
@@ -57,13 +69,14 @@ export default function Projects({
         </section>
       )}
       <section>
-        {repos.map((r) => {
-          return (
-            <span key={r.id} id={r.name} onClick={(e) => handleClick(e)}>
-              {formatProjectName(r.name)}
-            </span>
-          )
-        })}
+        {!isMobile &&
+          repos.map((r) => {
+            return (
+              <span key={r.id} id={r.name} onClick={(e) => handleClick(e)}>
+                {formatProjectName(r.name)}
+              </span>
+            )
+          })}
       </section>
     </section>
   )
