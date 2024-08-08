@@ -83,21 +83,6 @@ export default function About({isMobile}: {isMobile: boolean}): JSX.Element {
         </div>
         <div>
           <div>
-            <Link href="https://italents.com.br/" target="_blank">
-              <h4>iTalents</h4>
-            </Link>
-            <h4>2024 {'(Cursando)'}</h4>
-            <Link href="">
-              <h5>Back-end Node.js + MongoDB</h5>
-            </Link>
-          </div>
-          <div className="timeline">
-            <span className="circle"></span>
-            <span className="line"></span>
-          </div>
-        </div>
-        <div>
-          <div>
             <Link href="https://www.betrybe.com/" target="_blank">
               <h4>Trybe - Aceleração Java</h4>
             </Link>
