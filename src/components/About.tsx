@@ -71,9 +71,27 @@ export default function About({isMobile}: {isMobile: boolean}): JSX.Element {
             >
               <h4>Faculdade UniFacid Wyden</h4>
             </Link>
-            <h4>2024 {'(1° período)'}</h4>
+            <h4>2024 {'(Cursando)'}</h4>
             <Link href="">
               <h5>Análise e Desenvolvimento de Sistemas</h5>
+            </Link>
+          </div>
+          <div className="timeline">
+            <span className="circle"></span>
+            <span className="line"></span>
+          </div>
+        </div>
+        <div>
+          <div>
+            <Link
+              href="https://www.cre8language.com/"
+              target="_blank"
+            >
+              <h4>Cre8 Language</h4>
+            </Link>
+            <h4>2024 {'(Em andamento)'}</h4>
+            <Link href="">
+              <h5>Inglês A2 - B1</h5>
             </Link>
           </div>
           <div className="timeline">
