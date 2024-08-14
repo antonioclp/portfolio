@@ -2,7 +2,7 @@
 import React, {useEffect, useState} from 'react'
 
 // Components.
-import {LeftBar, About, Projects, Contacts} from '@/components'
+import {LeftBar, About, Projects, Contacts, Loading} from '@/components'
 
 // Api.
 import {fetchApi} from '@/lib/api'
@@ -32,6 +32,7 @@ export default function Home(): JSX.Element {
   })
   const [isMobile, setIsMobile] = useState<boolean>(false)
   const [repositories, setRepositories] = useState<IRepository[]>([])
+  const [isLoading, setIsLoading] = useState<Boolean>(true)
 
   useEffect(() => {
     const fetchRepositories = async () => {
@@ -41,6 +42,7 @@ export default function Home(): JSX.Element {
       })
 
       setRepositories(repositories.data)
+      setIsLoading(false)
     }
 
     const handleResize = () => {
@@ -70,19 +72,36 @@ export default function Home(): JSX.Element {
     }))
   }
 
-  return (
-    <main className="app-pg">
-      <LeftBar handleClick={handleComponentClick} isMobile={isMobile} />
-      {options.showComponent === 'about-me' && <About isMobile={isMobile} />}
-      {options.showComponent === 'projects' && (
+  const renderContent = () => {
+    if (options.showComponent === 'about-me') {
+      return <About isMobile={isMobile} />
+    }
+
+    if (options.showComponent === 'projects') {
+      if (isLoading) {
+        return <Loading />
+      }
+      return (
         <Projects
           repos={repositories}
           handleClick={handleProjectClick}
           showProject={options.showProject}
           isMobile={isMobile}
         />
-      )}
-      {options.showComponent === 'contacts' && <Contacts />}
+      )
+    }
+
+    if (options.showComponent === 'contacts') {
+      return <Contacts />
+    }
+
+    return null
+  }
+
+  return (
+    <main className="app-pg">
+      <LeftBar handleClick={handleComponentClick} isMobile={isMobile} />
+      {renderContent()}
     </main>
   )
 }
