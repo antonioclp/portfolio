@@ -7,7 +7,7 @@
   min-width: 70%;
   max-width: 70%;
   min-height: 470px;
-  max-height: 470px;
+
   border-radius: 5px;
   box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.8);
   background-color: #c5baaa;
@@ -116,6 +116,11 @@
 
     button:active {
       transform: scale(0.95);
+    }
+
+    p {
+      color: red;
+      font-size: 12px;
     }
   }
 }

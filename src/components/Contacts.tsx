@@ -2,6 +2,7 @@ import {useState} from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import emailjs from 'emailjs-com'
+import ReCaptcha from 'react-google-recaptcha'
 
 // Style.
 import '@/styles/components/contacts.css'
@@ -16,7 +17,8 @@ export default function Contacts(): JSX.Element {
     email: '',
     message: '',
   })
-  const [status, setStatus] = useState('')
+  const [status, setStatus] = useState<String>('')
+  const [captchaValue, setCaptchaValue] = useState(null)
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -25,8 +27,21 @@ export default function Contacts(): JSX.Element {
     setFormData({...formData, [name]: value})
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleCaptchaChange = (value) => {
+    setCaptchaValue(value)
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+
+    if (!captchaValue) {
+      setStatus('Verifique o reCAPTCHA')
+      
+      await new Promise((resolve) => setTimeout(resolve, 3000));
+      
+      setStatus('')
+      return
+    }
 
     emailjs
       .send(
@@ -102,12 +117,15 @@ export default function Contacts(): JSX.Element {
             name="message"
             onChange={handleChange}
             required
-            
           />
         </div>
+        <ReCaptcha
+          sitekey={String(process.env.GOOGLE_RECAPTCHA_TOKEN)}
+          onChange={handleCaptchaChange}
+        />
+        {status && <p>{status}</p>}
         <button type="submit">Enviar</button>
       </form>
-      {status && <p>{status}</p>}
     </section>
   )
 }
