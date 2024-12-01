@@ -13,8 +13,8 @@ import '@/styles/components/contacts.css'
  */
 export default function Contacts(): JSX.Element {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
+    from_name: '',
+    from_email: '',
     message: '',
   })
   const [status, setStatus] = useState<String>('')
@@ -91,21 +91,21 @@ export default function Contacts(): JSX.Element {
       <form onSubmit={handleSubmit}>
         <h2>ENTRE EM CONTATO</h2>
         <div>
-          <label htmlFor="name">Subject</label>
+          <label htmlFor="from_name">Subject</label>
           <input
             type="text"
-            id="name"
-            name="name"
+            id="from_name"
+            name="from_name"
             onChange={handleChange}
             required
           />
         </div>
         <div>
-          <label htmlFor="email">E-mail</label>
+          <label htmlFor="from_email">Email</label>
           <input
             type="email"
-            id="email"
-            name="email"
+            id="from_email"
+            name="from_email"
             onChange={handleChange}
             required
           />
