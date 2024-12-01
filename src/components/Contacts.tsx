@@ -18,7 +18,7 @@ export default function Contacts(): JSX.Element {
     message: '',
   })
   const [status, setStatus] = useState<String>('')
-  const [captchaValue, setCaptchaValue] = useState(null)
+  const [captchaValue, setCaptchaValue] = useState<string | null>(null)
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -27,7 +27,7 @@ export default function Contacts(): JSX.Element {
     setFormData({...formData, [name]: value})
   }
 
-  const handleCaptchaChange = (value) => {
+  const handleCaptchaChange = (value: string | null) => {
     setCaptchaValue(value)
   }
 
@@ -45,10 +45,10 @@ export default function Contacts(): JSX.Element {
 
     emailjs
       .send(
-        'service_zp8ncge',
-        'template_7l2ptuh',
+        String(process.env.EMAILJS_SERVICE_KEY),
+        String(process.env.EMAILJS_TEMPLATE_KEY),
         formData,
-        'gwHYyC59J18u_sdpT',
+        String(process.env.EMAILJS_USER_KEY),
       )
       .then(
         (response) => {
