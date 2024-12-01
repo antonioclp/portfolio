@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import {IoMdDownload} from 'react-icons/io'
 
 // Styles.
 import '@/styles/components/about.css'
@@ -63,6 +64,12 @@ export default function About({isMobile}: {isMobile: boolean}): JSX.Element {
         />
       </section>
       <section>
+        <Link href="/antonio-santana-cv.pdf" target="_blank" download>
+          <IoMdDownload />
+          BAIXAR CV
+        </Link>
+      </section>
+      <section>
         <div>
           <div>
             <Link
@@ -83,10 +90,7 @@ export default function About({isMobile}: {isMobile: boolean}): JSX.Element {
         </div>
         <div>
           <div>
-            <Link
-              href="https://www.cre8language.com/"
-              target="_blank"
-            >
+            <Link href="https://www.cre8language.com/" target="_blank">
               <h4>Cre8 Language</h4>
             </Link>
             <h4>2024 {'(Em andamento)'}</h4>
